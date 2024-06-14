@@ -55,6 +55,8 @@ export const getPackageInfos = async (): Promise<PackageInfo[]> => {
     : !!rootPackageJson.workspaces.packages
     ? rootPackageJson.workspaces.packages
     : [];
+
+  console.log('packageGlobs:",packageGlobs');
   const directories = await globby(packageGlobs, {
     onlyDirectories: true,
     expandDirectories: false,
